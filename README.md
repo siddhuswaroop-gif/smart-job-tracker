@@ -14,3 +14,5 @@ A Django-based web application to track job applications and manage statuses.
 - HTML / CSS
 
 This project demonstrates practical backend development and application logic.
+
+### Screenshots
