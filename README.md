@@ -19,4 +19,4 @@ This project demonstrates practical backend development and application logic.
 ![Login Page](https://github.com/siddhuswaroop-gif/smart-job-tracker/blob/main/Screenshot%202026-02-20%20124610.png?raw=true)
 ![Dashboard](https://github.com/siddhuswaroop-gif/smart-job-tracker/blob/main/Screenshot%202026-02-20%20124637.png?raw=true)
 ![Applications View](IMAGE_LINK_HERE)
-![Edit Screen](IMAGE_LINK_HERE)
+![Edit Screen](https://github.com/siddhuswaroop-gif/smart-job-tracker/blob/main/Screenshot%202026-02-20%20124745.png?raw=true)
