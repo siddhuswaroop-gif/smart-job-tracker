@@ -1,0 +1,102 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Job Application</title>
+    <link rel="stylesheet" href="{% static 'tracker/css/style.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Edit Job Application</h2>
+
+    <!-- ⭐ enctype REQUIRED for resume updates -->
+    <form method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        <div>
+            <label for="company">Company Name</label><br>
+            <input id="company"
+                   type="text"
+                   name="company_name"
+                   value="{{ app.company_name }}"
+                   required>
+        </div>
+
+        <div>
+            <label for="role">Job Role</label><br>
+            <input id="role"
+                   type="text"
+                   name="job_role"
+                   value="{{ app.job_role }}"
+                   required>
+        </div>
+
+        <div>
+            <label for="status">Application Status</label><br>
+            <select id="status" name="status">
+
+                <option value="APPLIED"
+                    {% if app.status == 'APPLIED' %}selected{% endif %}>
+                    Applied
+                </option>
+
+                <option value="INTERVIEW"
+                    {% if app.status == 'INTERVIEW' %}selected{% endif %}>
+                    Interview
+                </option>
+
+                <option value="REJECTED"
+                    {% if app.status == 'REJECTED' %}selected{% endif %}>
+                    Rejected
+                </option>
+
+                <option value="OFFER"
+                    {% if app.status == 'OFFER' %}selected{% endif %}>
+                    Offer
+                </option>
+
+            </select>
+        </div>
+
+        <div>
+            <label for="notes">Notes</label><br>
+            <textarea id="notes"
+                      name="notes"
+                      rows="4">{{ app.notes }}</textarea>
+        </div>
+
+        <!-- ⭐ Resume Update Support -->
+        <div>
+            <label>Replace Resume (optional)</label><br>
+            <input type="file" name="resume">
+        </div>
+
+        <!-- ⭐ Show existing resume -->
+        {% if app.resume %}
+            <div class="resume-section">
+                Current Resume:
+                <a href="{{ app.resume.url }}" target="_blank">
+                    View Resume
+                </a>
+            </div>
+        {% endif %}
+
+        <div style="margin-top: 10px;">
+            <button type="submit">Update Application</button>
+
+            <button type="button"
+                    onclick="window.location.href='/dashboard/'">
+                Cancel
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>

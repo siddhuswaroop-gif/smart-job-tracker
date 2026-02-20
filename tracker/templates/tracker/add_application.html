@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Job Application</title>
+    <link rel="stylesheet" href="{% static 'tracker/css/style.css' %}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Add Job Application</h2>
+
+    <!-- ⭐ IMPORTANT: enctype required for file uploads -->
+    <form method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        <div>
+            <label>Company Name</label><br>
+            <input type="text" name="company_name" required>
+        </div>
+
+        <div>
+            <label>Job Role</label><br>
+            <input type="text" name="job_role" required>
+        </div>
+
+        <div>
+            <label>Status</label><br>
+            <select name="status">
+                <option value="APPLIED">Applied</option>
+                <option value="INTERVIEW">Interview</option>
+                <option value="REJECTED">Rejected</option>
+                <option value="OFFER">Offer</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Notes</label><br>
+            <textarea name="notes" rows="4"></textarea>
+        </div>
+
+        <!-- ⭐ NEW FEATURE -->
+        <div>
+            <label>Upload Resume</label><br>
+            <input type="file" name="resume">
+        </div>
+
+        <div style="margin-top: 10px;">
+            <button type="submit">Save Application</button>
+
+            <button type="button" onclick="window.location.href='/'">
+                Cancel
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
