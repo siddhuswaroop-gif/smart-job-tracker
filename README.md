@@ -16,3 +16,7 @@ A Django-based web application to track job applications and manage statuses.
 This project demonstrates practical backend development and application logic.
 
 ### Screenshots
+![Login Page](https://github.com/siddhuswaroop-gif/smart-job-tracker/blob/main/Screenshot%202026-02-20%20124610.png?raw=true)
+![Dashboard](IMAGE_LINK_HERE)
+![Applications View](IMAGE_LINK_HERE)
+![Edit Screen](IMAGE_LINK_HERE)
